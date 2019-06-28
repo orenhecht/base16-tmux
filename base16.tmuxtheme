@@ -2,6 +2,11 @@
 # tmux Theme that uses the same palette as the base Airline theme while
 # using Base16 colors
 
+# tmux-prefix-highlight
+set -g @prefix_highlight_output_prefix "#[fg=colour04]#[bg=default]#[nobold]#[noitalics]#[nounderscore]#[bg=colour04]#[fg=default]"
+set -g @prefix_highlight_output_suffix "#[fg=colour18]#[bg=colour04]#[nobold]#[noitalics]#[nounderscore]"
+set -g @prefix_highlight_copy_mode_attr "fg=colour04,bg=default,bold"
+
 # Status update interval
 set -g status-interval 1
 
@@ -16,7 +21,7 @@ set -g status-left "#[fg=colour18,bg=colour04,bold] #S #[fg=colour04,bg=colour18
 # Right side of status bar
 set -g status-left-style fg=default,bg=default
 set -g status-right-length 150
-set -g status-right '#[fg=colour19,bg=default,nobold,nounderscore,noitalics]#[fg=colour21,bg=colour19] %H:%M  %d/%m/%Y #[fg=colour04,bg=colour19,nobold,nounderscore,noitalics] #[fg=colour18,bg=colour04,bold] #H '
+set -g status-right '#{prefix_highlight}#[fg=colour19,bg=default,nobold,nounderscore,noitalics]#[fg=colour21,bg=colour19] %H:%M  %d/%m/%Y #[fg=colour04,bg=colour19,nobold,nounderscore,noitalics] #[fg=colour18,bg=colour04,bold] #H '
 
 # Window status
 set -g window-status-format "#[fg=colour18,bg=colour19,nobold,noitalics,nounderscore] #[fg=colour21,bg=colour19]#I #[fg=colour21,bg=colour19,nobold,noitalics,nounderscore] #[fg=colour21,bg=colour19]#W #F #[fg=colour19,bg=colour18,nobold,noitalics,nounderscore]"
